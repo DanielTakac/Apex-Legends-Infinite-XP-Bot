@@ -17,6 +17,7 @@ gamesPlayed = 0
 gamesWon = 0
 gamesLost = 0
 xpPerGame = 2000
+xpToLvlUp = 18000
 startTime = time.time()
 
 def main():
@@ -29,7 +30,6 @@ def main():
             while(CheckIfInGame == False):
                 CheckIfUserExits()
                 sleep(1)
-            SelectLegend()
             while(CheckIfGameEnded() == False):
                 CheckIfUserExits()
                 CheckIfCrashed()
@@ -43,12 +43,21 @@ def main():
     '''while(keyboard.is_pressed("x") != True):
         print(pyautogui.position())'''
 
+    Quit()
+
 def Quit():
     print("Time running: " + (startTime - time.time()))
     print("Games played: " + gamesPlayed)
     print("Games won: " + gamesWon)
     print("Games lost: "+ gamesLost)
     print("XP earned: " + (gamesPlayed * xpPerGame))
+    print("Levels earned: " + ((gamesPlayed * xpPerGame) / xpToLvlUp))
+    exit()
+
+def ChooseLoadout():
+    pyautogui.moveTo(381, 450, duration=0.5)
+    pyautogui.click()
+    sleep(0.5)
 
 def Move():
     write("dwadsadawdawdawdadsdddaadawdsdawd", interval=0.1)
@@ -136,15 +145,19 @@ def MatchEnded(result):
     pyautogui.click()
     sleep(0.5)
 
-    print("Match ended at " + GetTime() + " Result: " + result)
+    gamesPlayed += 1
 
-def SelectLegend():
-    print("Got in game at " + GetTime())
+    if result == "Win":
+        gamesWon += 1
+    elif result == "Loss":
+        gamesLost += 1
+
+    print("Match ended at " + GetTime() + " Result: " + result)
 
 def CheckIfCrashed():
     if pyautogui.locateOnScreen("CrashCheck.png", confidence=0.8) != None:
         print("Crashed at " + GetTime)
-        exit()
+        Quit()
 
 def CheckIfInLobby():
     if pyautogui.locateOnScreen("InLobbyCheck.png", confidence=0.8) != None:
@@ -183,6 +196,15 @@ def CheckIfDied():
 def CheckIfUserExits():
     if keyboard.is_pressed("x"):
         print("User terminated the program at " + GetTime())
-        exit()
+        Quit()
+
+def CheckIfCanChooseLoadout():
+    if pyautogui.locateOnScreen("LoadoutCheck.png", confidence=1) != None:
+        ChooseLoadout()
+
+def CheckIfAfk():
+    if pyautogui.locateOnScreen("AfkCheck.png", confidence=1) != None:
+        print("Got error for AFK")
+        Quit()
 
 main()
