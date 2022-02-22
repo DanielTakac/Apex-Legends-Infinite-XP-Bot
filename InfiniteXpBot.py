@@ -15,7 +15,7 @@ from datetime import datetime
 gamesPlayed = 0
 gamesWon = 0
 gamesLost = 0
-xpPerGame = 2000
+xpPerGame = 2200
 xpToLvlUp = 18000
 startTime = time.time()
 
