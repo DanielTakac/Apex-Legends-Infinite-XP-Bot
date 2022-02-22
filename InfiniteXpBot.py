@@ -64,9 +64,11 @@ def ChooseLoadout():
 
 def Move():
     pyautogui.keyDown("w")
+    pyautogui.click()
     sleep(0.5)
     pyautogui.keyUp("w")
     pyautogui.keyDown("d")
+    pyautogui.click()
     sleep(0.5)
     pyautogui.keyUp("d")
     pyautogui.keyDown("w")
@@ -76,8 +78,10 @@ def Move():
     sleep(0.5)
     pyautogui.keyUp("space")
     pyautogui.keyDown("w")
+    pyautogui.click()
     sleep(0.3)
     pyautogui.keyDown("space")
+    pyautogui.click()
     sleep(0.5)
     pyautogui.keyUp("space")
     pyautogui.keyUp("w")
