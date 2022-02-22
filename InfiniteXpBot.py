@@ -1,5 +1,4 @@
 from contextlib import nullcontext
-from distutils.spawn import spawn
 from select import select
 from tempfile import gettempdir
 from tkinter import Image
@@ -49,12 +48,12 @@ def main():
     Quit()
 
 def Quit():
-    print("Time running: " + (startTime - time.time()))
-    print("Games played: " + gamesPlayed)
-    print("Games won: " + gamesWon)
-    print("Games lost: "+ gamesLost)
-    print("XP earned: " + (gamesPlayed * xpPerGame))
-    print("Levels earned: " + ((gamesPlayed * xpPerGame) / xpToLvlUp))
+    print("Time running: " + str(startTime - time.time()))
+    print("Games played: " + str(gamesPlayed))
+    print("Games won: " + str(gamesWon))
+    print("Games lost: "+ str(gamesLost))
+    print("XP earned: " + str(gamesPlayed * xpPerGame))
+    print("Levels earned: " + str((gamesPlayed * xpPerGame) / xpToLvlUp))
     exit()
 
 def ChooseLoadout():
