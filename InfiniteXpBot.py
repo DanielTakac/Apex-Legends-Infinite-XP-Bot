@@ -13,8 +13,14 @@ import random
 from PIL import ImageGrab
 from datetime import datetime
 
+gamesPlayed = 0
+gamesWon = 0
+gamesLost = 0
+xpPerGame = 2000
+startTime = time.time()
+
 def main():
-    
+
     print("Started at " + GetTime())
 
     while(True):
@@ -36,6 +42,13 @@ def main():
 
     '''while(keyboard.is_pressed("x") != True):
         print(pyautogui.position())'''
+
+def Quit():
+    print("Time running: " + (startTime - time.time()))
+    print("Games played: " + gamesPlayed)
+    print("Games won: " + gamesWon)
+    print("Games lost: "+ gamesLost)
+    print("XP earned: " + (gamesPlayed * xpPerGame))
 
 def Move():
     write("dwadsadawdawdawdadsdddaadawdsdawd", interval=0.1)
