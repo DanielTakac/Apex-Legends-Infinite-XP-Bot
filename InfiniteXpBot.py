@@ -63,7 +63,24 @@ def ChooseLoadout():
     sleep(0.5)
 
 def Move():
-    write("dwadsadawdawdawdadsdddaadawdsdawd", interval=0.1)
+    pyautogui.keyDown("w")
+    sleep(0.5)
+    pyautogui.keyUp("w")
+    pyautogui.keyDown("d")
+    sleep(0.5)
+    pyautogui.keyUp("d")
+    pyautogui.keyDown("w")
+    sleep(0.5)
+    pyautogui.keyUp("w")
+    pyautogui.keyDown("space")
+    sleep(0.5)
+    pyautogui.keyUp("space")
+    pyautogui.keyDown("w")
+    sleep(0.3)
+    pyautogui.keyDown("space")
+    sleep(0.5)
+    pyautogui.keyUp("space")
+    pyautogui.keyUp("w")
 
 def GetTime():
     now = datetime.now()
@@ -185,7 +202,7 @@ def CheckIfGameEnded():
         return False
 
 def CheckIfCanSpawn():
-    if pyautogui.locateOnScreen("CanSpawnCheck.png", confidence=0.95) != None:
+    if pyautogui.locateOnScreen("CanSpawnCheck.png", confidence=0.85) != None:
         return True
     else:
         return False
@@ -202,7 +219,9 @@ def CheckIfUserExits():
         Quit()
 
 def CheckIfCanChooseLoadout():
-    if pyautogui.locateOnScreen("LoadoutCheck.png", confidence=1) != None:
+    if pyautogui.locateOnScreen("LoadoutCheck1.png", confidence=0.95) != None:
+        return True
+    elif pyautogui.locateOnScreen("LoadoutCheck2.png", confidence=0.95) != None:
         return True
     else:
         return False
