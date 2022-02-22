@@ -28,7 +28,7 @@ def main():
             GetInGame()
             while(CheckIfInGame == False):
                 CheckIfUserExits()
-                sleep(1)
+                sleep(30)
             while(CheckIfGameEnded() == False):
                 CheckIfUserExits()
                 CheckIfCrashed()
