@@ -33,6 +33,9 @@ def main():
             while(CheckIfGameEnded() == False):
                 CheckIfUserExits()
                 CheckIfCrashed()
+                CheckIfAfk()
+                if(CheckIfCanChooseLoadout()):
+                    ChooseLoadout()
                 if(CheckIfCanSpawn()):
                     Spawn()
                 if(CheckIfDied()):
@@ -200,7 +203,9 @@ def CheckIfUserExits():
 
 def CheckIfCanChooseLoadout():
     if pyautogui.locateOnScreen("LoadoutCheck.png", confidence=1) != None:
-        ChooseLoadout()
+        return True
+    else:
+        return False
 
 def CheckIfAfk():
     if pyautogui.locateOnScreen("AfkCheck.png", confidence=1) != None:
