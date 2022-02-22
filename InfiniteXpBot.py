@@ -23,7 +23,7 @@ def main():
 
     print("Started at " + GetTime())
 
-    while(1):
+    while(True):
         if(CheckIfInLobby()):
             GetInGame()
             while(CheckIfInGame == False):
