@@ -168,11 +168,14 @@ def MatchEnded(result):
     pyautogui.click()
     sleep(0.5)
 
+    global gamesPlayed
     gamesPlayed += 1
 
     if result == "Win":
+        global gamesWon
         gamesWon += 1
     elif result == "Loss":
+        global gamesLost
         gamesLost += 1
 
     print("Match ended at " + GetTime() + " Result: " + result)
