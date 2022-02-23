@@ -182,7 +182,7 @@ def MatchEnded(result):
 
 def CheckIfCrashed():
     if pyautogui.locateOnScreen("CrashCheck.png", confidence=0.8) != None:
-        print("Crashed at " + GetTime)
+        print("Crashed at " + GetTime())
         Quit()
 
 def CheckIfInLobby():
