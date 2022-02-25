@@ -12,6 +12,8 @@ import random
 from PIL import ImageGrab
 from datetime import datetime
 
+pyautogui.FAILSAFE = False
+
 gamesPlayed = 0
 gamesWon = 0
 gamesLost = 0
@@ -114,7 +116,7 @@ def GetInGame():
     pyautogui.moveTo(1708, 570, duration=0.5)
     pyautogui.click()
 
-    #Click ready
+    #Click readyd
     pyautogui.moveTo(231, 968, duration=0.5)
     pyautogui.click()
     sleep(0.5)
