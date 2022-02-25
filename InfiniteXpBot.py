@@ -1,3 +1,4 @@
+from asyncio.constants import SSL_HANDSHAKE_TIMEOUT
 from contextlib import nullcontext
 from select import select
 from tempfile import gettempdir
@@ -26,6 +27,8 @@ def main():
     print("Started at " + GetTime())
 
     while(True):
+        pyautogui.hotkey("esc")
+        sleep(2)
         if(CheckIfInLobby()):
             GetInGame()
             while(CheckIfInGame == False):
