@@ -1,16 +1,7 @@
-from asyncio.constants import SSL_HANDSHAKE_TIMEOUT
-from contextlib import nullcontext
-from select import select
-from tempfile import gettempdir
-from tkinter import Image
-from traceback import print_tb
-from numpy import true_divide
 from pyautogui import *
 import pyautogui
 import time
 import keyboard
-import random
-from PIL import ImageGrab
 from datetime import datetime
 
 pyautogui.FAILSAFE = False
@@ -122,7 +113,7 @@ def GetInGame():
     #Click readyd
     pyautogui.moveTo(231, 968, duration=0.5)
     pyautogui.click()
-    stime.leep(0.5)
+    time.sleep(0.5)
 
     print("Started matchmaking at " + GetTime())
 
