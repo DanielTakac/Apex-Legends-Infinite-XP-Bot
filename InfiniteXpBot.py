@@ -77,7 +77,7 @@ def Move():
     time.sleep(0.3)
     pyautogui.keyDown("space")
     pyautogui.click()
-    sleep(0.5)
+    time.sleep(0.5)
     pyautogui.keyUp("space")
     pyautogui.keyUp("w")
 
