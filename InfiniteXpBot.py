@@ -176,11 +176,6 @@ def MatchEnded(result):
 
     print("Match ended at " + GetTime() + " Result: " + result)
 
-def CheckIfCrashed():
-    if pyautogui.locateOnScreen("CrashCheck.png", confidence=0.8) != None:
-        print("Crashed at " + GetTime())
-        Quit()
-
 def CheckIfInLobby():
     if pyautogui.locateOnScreen("InLobbyCheck.png", confidence=0.8) != None:
         return True
