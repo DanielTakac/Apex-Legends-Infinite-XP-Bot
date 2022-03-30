@@ -28,12 +28,12 @@ def main():
 
     while(True):
         pyautogui.hotkey("esc")
-        sleep(2)
+        time.sleep(2)
         if(CheckIfInLobby()):
             GetInGame()
             while(CheckIfInGame == False):
                 CheckIfUserExits()
-                sleep(30)
+                time.sleep(30)
             while(CheckIfGameEnded() == False):
                 CheckIfUserExits()
                 CheckIfCrashed()
@@ -45,7 +45,7 @@ def main():
                 if(CheckIfDied()):
                     Death()
                 Move()
-                sleep(0.5)
+                time.sleep(0.5)
 
     '''while(keyboard.is_pressed("x") != True):
         print(pyautogui.position())'''
@@ -64,26 +64,26 @@ def Quit():
 def ChooseLoadout():
     pyautogui.moveTo(381, 450, duration=0.5)
     pyautogui.click()
-    sleep(0.5)
+    time.sleep(0.5)
 
 def Move():
     pyautogui.keyDown("w")
     pyautogui.click()
-    sleep(0.5)
+    time.sleep(0.5)
     pyautogui.keyUp("w")
     pyautogui.keyDown("d")
     pyautogui.click()
-    sleep(0.5)
+    time.sleep(0.5)
     pyautogui.keyUp("d")
     pyautogui.keyDown("w")
-    sleep(0.5)
+    time.sleep(0.5)
     pyautogui.keyUp("w")
     pyautogui.keyDown("space")
-    sleep(0.5)
+    time.sleep(0.5)
     pyautogui.keyUp("space")
     pyautogui.keyDown("w")
     pyautogui.click()
-    sleep(0.3)
+    time.sleep(0.3)
     pyautogui.keyDown("space")
     pyautogui.click()
     sleep(0.5)
@@ -122,7 +122,7 @@ def GetInGame():
     #Click readyd
     pyautogui.moveTo(231, 968, duration=0.5)
     pyautogui.click()
-    sleep(0.5)
+    stime.leep(0.5)
 
     print("Started matchmaking at " + GetTime())
 
@@ -131,47 +131,47 @@ def Spawn():
     #Try spawning on A1
     pyautogui.moveTo(1350, 522, duration=1)
     pyautogui.click()
-    sleep(0.5)
+    time.sleep(0.5)
 
     #Try spawning on B1
     pyautogui.moveTo(634, 402, duration=1)
     pyautogui.click()
-    sleep(0.5)
+    time.sleep(0.5)
 
     #Try spawning on A2
     pyautogui.moveTo(1350, 520, duration=1)
     pyautogui.click()
-    sleep(0.5)
+    time.sleep(0.5)
 
     #Try spawning on B2
     pyautogui.moveTo(608, 444, duration=1)
     pyautogui.click()
-    sleep(0.5)
+    time.sleep(0.5)
 
     print("Spawned at " + GetTime())
 
 def Death():
-    sleep(5)
+    time.sleep(5)
     pyautogui.hotkey("tab")
-    sleep(5)
+    time.sleep(5)
 
     print("Died at " + GetTime())
 
 def MatchEnded(result):
-    sleep(30)
+    time.sleep(30)
     pyautogui.moveTo(968, 993, duration=1)
     pyautogui.hotkey("space")
     pyautogui.click()
-    sleep(0.5)
+    time.sleep(0.5)
     pyautogui.hotkey("space")
     pyautogui.click()
-    sleep(2)
+    time.sleep(2)
     pyautogui.hotkey("space")
     pyautogui.click()
-    sleep(0.5)
+    time.sleep(0.5)
     pyautogui.hotkey("space")
     pyautogui.click()
-    sleep(0.5)
+    time.sleep(0.5)
 
     global gamesPlayed
     gamesPlayed += 1
